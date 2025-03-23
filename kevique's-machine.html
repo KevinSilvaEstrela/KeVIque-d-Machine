@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTecher's Machine</title>
+    <style>
+        body {
+            background-color: #3E424B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            border-style: groove;
+            border-color: rgb(110, 98, 121);
+            background: rgb(110, 98, 121);
+            border-radius: 42px;
+            padding: 20px;
+        }
+
+        h1, h3, p {
+            color: white;
+        }
+
+        input {
+            background-color: white;
+            color: black;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            background-color: white;
+            color: black;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 110px;
+            font-size: larger;
+        }
+
+        .input {
+            width: 330px;
+            height: 20px;
+            text-align: center;
+            font-size: larger;
+        }
+
+        .bases {
+            width: 300px;
+            text-align: center;
+            font-size: larger;
+        }
+
+        .soma {
+            border-style: double;
+            border-color: white;
+            width: 80px;
+            height: 80px;
+            color: white;
+        }
+
+        .inputs-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+
+        .result-container {
+            margin-top: 20px;
+            color: white;
+            border-style: groove;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kevique's Machine</h1>
+        
+        <div class="inputs-container">
+            <div>
+                <input class="input" id="demo1" type="text" placeholder="Ex: 42">
+                <h3>Insira o número que deseja converter.</h3>
+            </div>
+            
+            <div class="soma">
+                <h1>+</h1>
+            </div>
+
+            <div>
+                <select class="bases" id="bases">
+                    <option value="octal">Octal</option>
+                    <option value="hexadecimal">Hexadecimal</option>
+                    <option value="binario">Binário</option>
+                </select>
+                <h3>Insira a base decimal desejada.</h3>
+            </div>
+
+            <div>
+                <h1>=</h1>
+            </div>
+
+            <button onclick="converter()">Converter</button>
+        
+            <div class="result-container">
+                <h3>Resultados:</h3>
+                <div id="demo2"></div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    <script>
+        function converter() {
+            var decimal = Number(document.getElementById("demo1").value);
+            var base = document.getElementById("bases").value;
+
+            if (base === "octal") {
+                demo2.innerHTML = `<b>Octal:</b> ${decimal.toString(8)}`;
+            } else if (base === "hexadecimal") {
+                demo2.innerHTML = `<b>Hexadecimal:</b> ${decimal.toString(16)}`;
+            } else if (base === "binario") {
+                demo2.innerHTML = `<b>Binario:</b> ${decimal.toString(2)}`;
+            } else {
+                demo2.innerText = decimal;
+            }
+        }
+    </script>
+</body>
+
+</html>
